@@ -1,12 +1,24 @@
-   {% extends "base.html" %}
-   {% block content %}
-   <h1>Weekly Report</h1>
-   <p>Sep 8 – Sep 15, 2026</p>
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
 
-   <div class="report-summary">
-     <p>Average CPU usage: 42%</p>
-     <p>Average RAM usage: 58%</p>
-     <p>Total alerts this week: 23</p>
-     <p>Uptime: 99.2%</p>
-   </div>
-   {% endblock %}
+  <header>
+    <div>
+      <h1>Weekly Report</h1>
+      <p class="subtitle">Sep 8 – Sep 15, 2026</p>
+    </div>
+  </header>
+
+  <div class="card" style="max-width:420px;">
+    <div class="card-head">
+      <h2>Summary</h2>
+    </div>
+    <div class="summary-row"><span>Average CPU usage</span><span class="n">42%</span></div>
+    <div class="summary-row"><span>Average RAM usage</span><span class="n">58%</span></div>
+    <div class="summary-row"><span>Total alerts this week</span><span class="n">23</span></div>
+    <div class="summary-row"><span>Uptime</span><span class="n">99.2%</span></div>
+  </div>
+
+  <footer>this is a temporary static report · will pull live weekly data from CloudWatch later</footer>
+
+{% endblock %}
