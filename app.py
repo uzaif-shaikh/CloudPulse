@@ -22,3 +22,10 @@ def dashboard():
 @app.route('/reports')
 def reports():
     return render_template('reports.html', active_page='reports')
+@app.route('/servers')
+def servers():
+    return render_template('servers.html', active_page='servers')
+
+@app.route('/alerts')
+def alerts():
+    return render_template('alerts.html', active_page='alerts')
