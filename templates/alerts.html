@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Alerts{% endblock %}
+{% block content %}
+
+  <header>
+    <div>
+      <h1>Alerts</h1>
+      <p class="subtitle">Recent alerts across your infrastructure</p>
+    </div>
+  </header>
+
+  <div class="card alerts-card" style="max-width:640px;">
+    <div class="card-head">
+      <h2>Recent Alerts</h2>
+    </div>
+
+    <div class="alert-row">
+      <div class="alert-dot crit"></div>
+      <div class="alert-content">
+        <div class="alert-top"><span class="alert-title">High CPU Usage</span><span class="alert-time">2 min ago</span></div>
+        <div class="alert-sub">Backup Server - CPU usage is above 90%</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-dot crit"></div>
+      <div class="alert-content">
+        <div class="alert-top"><span class="alert-title">Disk Space Critical</span><span class="alert-time">10 min ago</span></div>
+        <div class="alert-sub">Backup Server - Disk space is above 90%</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-dot warn"></div>
+      <div class="alert-content">
+        <div class="alert-top"><span class="alert-title">High Memory Usage</span><span class="alert-time">25 min ago</span></div>
+        <div class="alert-sub">Database Server - Memory usage is above 70%</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-dot crit"></div>
+      <div class="alert-content">
+        <div class="alert-top"><span class="alert-title">Server Offline</span><span class="alert-time">1 hour ago</span></div>
+        <div class="alert-sub">API Server - Server is not responding</div>
+      </div>
+    </div>
+    <div class="alert-row">
+      <div class="alert-dot warn"></div>
+      <div class="alert-content">
+        <div class="alert-top"><span class="alert-title">High CPU Usage</span><span class="alert-time">2 hours ago</span></div>
+        <div class="alert-sub">Database Server - CPU usage is above 80%</div>
+      </div>
+    </div>
+
+    <div class="alerts-footer">8 alerts total</div>
+  </div>
+
+  <footer>this is a temporary static list · will pull live data from CloudWatch later</footer>
+
+{% endblock %}

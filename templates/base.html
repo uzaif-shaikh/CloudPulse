@@ -30,16 +30,16 @@
       <span class="nav-label">Dashboard</span>
     </a>
 
-    <div class="nav-item" data-view="servers">
+    <a href="{{ url_for('servers') }}" class="nav-item {% if active_page == 'servers' %}active{% endif %}" data-view="servers">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="6" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="6" rx="1.4" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="7" r="0.9" fill="currentColor"/><circle cx="7" cy="17" r="0.9" fill="currentColor"/></svg>
       <span class="nav-label">Servers</span>
-    </div>
+    </a>
 
-    <div class="nav-item" data-view="alerts">
+    <a href="{{ url_for('alerts') }}" class="nav-item {% if active_page == 'alerts' %}active{% endif %}" data-view="alerts">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l9 16H3L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="0.9" fill="currentColor"/></svg>
       <span class="nav-label">Alerts</span>
       <span class="badge">2</span>
-    </div>
+    </a>
 
     <a href="{{ url_for('reports') }}" class="nav-item {% if active_page == 'reports' %}active{% endif %}" data-view="reports">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12h6M9 16h6M9 8h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
