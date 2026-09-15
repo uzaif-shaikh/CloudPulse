@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+  <header>
+    <div>
+      <h1>Dashboard</h1>
+      <p class="subtitle">Overview of all your infrastructure</p>
+    </div>
+  </header>
+
+  <div class="stats-grid">
+
+    <div class="card stat-card">
+      <div class="stat-top">
+        <span class="stat-label">Total Servers</span>
+        <div class="stat-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="6" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="6" rx="1.4" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="7" r="0.9" fill="currentColor"/><circle cx="7" cy="17" r="0.9" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="stat-value">5</div>
+      <div class="stat-desc muted">All servers configured</div>
+    </div>
+
+    <div class="card stat-card">
+      <div class="stat-top">
+        <span class="stat-label">Online Servers</span>
+        <div class="stat-icon green">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="stat-value">3</div>
+      <div class="stat-desc green">60% of total servers</div>
+    </div>
+
+    <div class="card stat-card">
+      <div class="stat-top">
+        <span class="stat-label">Warning</span>
+        <div class="stat-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l9 16H3L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="0.9" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="stat-value">1</div>
+      <div class="stat-desc amber">20% of total servers</div>
+    </div>
+
+    <div class="card stat-card">
+      <div class="stat-top">
+        <span class="stat-label">Offline Servers</span>
+        <div class="stat-icon red">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="stat-value">1</div>
+      <div class="stat-desc red">20% of total servers</div>
+    </div>
+
+    <div class="card stat-card">
+      <div class="stat-top">
+        <span class="stat-label">Total Alerts</span>
+        <div class="stat-icon purple">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a5 5 0 0 0-5 5v3.5L5 16h14l-2-3.5V9a5 5 0 0 0-5-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 19a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="stat-value">8</div>
+      <div class="stat-desc muted">Requires attention</div>
+    </div>
+
+  </div>
+
+  <div class="layout">
+
+    <div class="card table-card">
+      <div class="card-head">
+        <h2>Server Overview</h2>
+        <button class="btn-outline" data-toast="Server list — no live view wired up yet.">View All Servers</button>
+      </div>
+
+      <div class="table-scroll">
+        <table class="server-table">
+          <thead>
+            <tr>
+              <th>Server Name</th>
+              <th>Status</th>
+              <th>CPU</th>
+              <th>RAM</th>
+              <th>Disk</th>
+              <th>Uptime</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <div class="server-name-cell">
+                  <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                  <div>
+                    <div class="sname">Web Server</div>
+                    <div class="sip">18.232.45.67 | Mumbai</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="pill online">Online</span></td>
+              <td><div class="cell-metric"><span class="val">35%</span><div class="bar"><div class="bar-fill ok" style="width:35%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">48%</span><div class="bar"><div class="bar-fill ok" style="width:48%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">62%</span><div class="bar"><div class="bar-fill ok" style="width:62%"></div></div></div></td>
+              <td class="uptime">12d 5h 30m</td>
+              <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="server-name-cell">
+                  <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                  <div>
+                    <div class="sname">Database Server</div>
+                    <div class="sip">18.233.11.23 | Mumbai</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="pill online">Online</span></td>
+              <td><div class="cell-metric"><span class="val">55%</span><div class="bar"><div class="bar-fill ok" style="width:55%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">71%</span><div class="bar"><div class="bar-fill warn" style="width:71%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">80%</span><div class="bar"><div class="bar-fill warn" style="width:80%"></div></div></div></td>
+              <td class="uptime">9d 2h 15m</td>
+              <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="server-name-cell">
+                  <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                  <div>
+                    <div class="sname">API Server</div>
+                    <div class="sip">18.233.45.89 | Mumbai</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="pill offline">Offline</span></td>
+              <td class="uptime">-</td>
+              <td class="uptime">-</td>
+              <td class="uptime">-</td>
+              <td class="uptime">-</td>
+              <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="server-name-cell">
+                  <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                  <div>
+                    <div class="sname">Backup Server</div>
+                    <div class="sip">18.234.22.11 | Mumbai</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="pill warning">Warning</span></td>
+              <td><div class="cell-metric"><span class="val">92%</span><div class="bar"><div class="bar-fill crit" style="width:92%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">87%</span><div class="bar"><div class="bar-fill crit" style="width:87%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">94%</span><div class="bar"><div class="bar-fill crit" style="width:94%"></div></div></div></td>
+              <td class="uptime">20d 6h 45m</td>
+              <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="server-name-cell">
+                  <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                  <div>
+                    <div class="sname">Auth Server</div>
+                    <div class="sip">18.235.67.34 | Mumbai</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="pill online">Online</span></td>
+              <td><div class="cell-metric"><span class="val">23%</span><div class="bar"><div class="bar-fill ok" style="width:23%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">34%</span><div class="bar"><div class="bar-fill ok" style="width:34%"></div></div></div></td>
+              <td><div class="cell-metric"><span class="val">45%</span><div class="bar"><div class="bar-fill ok" style="width:45%"></div></div></div></td>
+              <td class="uptime">15d 3h 20m</td>
+              <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card alerts-card">
+      <div class="card-head">
+        <h2>Recent Alerts</h2>
+        <button class="btn-outline" data-toast="Alerts log — no live view wired up yet.">View All Alerts</button>
+      </div>
+
+      <div class="alert-row">
+        <div class="alert-dot crit"></div>
+        <div class="alert-content">
+          <div class="alert-top"><span class="alert-title">High CPU Usage</span><span class="alert-time">2 min ago</span></div>
+          <div class="alert-sub">Backup Server - CPU usage is above 90%</div>
+        </div>
+      </div>
+      <div class="alert-row">
+        <div class="alert-dot crit"></div>
+        <div class="alert-content">
+          <div class="alert-top"><span class="alert-title">Disk Space Critical</span><span class="alert-time">10 min ago</span></div>
+          <div class="alert-sub">Backup Server - Disk space is above 90%</div>
+        </div>
+      </div>
+      <div class="alert-row">
+        <div class="alert-dot warn"></div>
+        <div class="alert-content">
+          <div class="alert-top"><span class="alert-title">High Memory Usage</span><span class="alert-time">25 min ago</span></div>
+          <div class="alert-sub">Database Server - Memory usage is above 70%</div>
+        </div>
+      </div>
+      <div class="alert-row">
+        <div class="alert-dot crit"></div>
+        <div class="alert-content">
+          <div class="alert-top"><span class="alert-title">Server Offline</span><span class="alert-time">1 hour ago</span></div>
+          <div class="alert-sub">API Server - Server is not responding</div>
+        </div>
+      </div>
+      <div class="alert-row">
+        <div class="alert-dot warn"></div>
+        <div class="alert-content">
+          <div class="alert-top"><span class="alert-title">High CPU Usage</span><span class="alert-time">2 hours ago</span></div>
+          <div class="alert-sub">Database Server - CPU usage is above 80%</div>
+        </div>
+      </div>
+
+      <div class="alerts-footer">8 alerts total</div>
+    </div>
+
+  </div>
+
+  <footer>metrics polled from CloudWatch every 60s · this is a static mockup, not a live view</footer>
+
+{% endblock %}
