@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+{% block content %}
+
+  <header>
+    <div>
+      <h1>Settings</h1>
+      <p class="subtitle">Alert thresholds and account preferences</p>
+    </div>
+  </header>
+
+  <div class="card" style="max-width:420px;">
+    <div class="card-head">
+      <h2>Alert Thresholds</h2>
+    </div>
+    <div class="summary-row"><span>CPU usage warning</span><span class="n">90%</span></div>
+    <div class="summary-row"><span>Memory usage warning</span><span class="n">70%</span></div>
+    <div class="summary-row"><span>Disk usage warning</span><span class="n">90%</span></div>
+  </div>
+
+  <footer>this is a temporary static view · thresholds will be editable once wired to the backend</footer>
+
+{% endblock %}

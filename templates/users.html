@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{% block content %}
+
+  <header>
+    <div>
+      <h1>Users</h1>
+      <p class="subtitle">Accounts with access to this dashboard</p>
+    </div>
+  </header>
+
+  <div class="card table-card">
+    <div class="card-head">
+      <h2>All Users</h2>
+    </div>
+
+    <div class="table-scroll">
+      <table class="server-table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="server-name-cell">
+                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                <div>
+                  <div class="sname">Uzaif</div>
+                  <div class="sip">Administrator</div>
+                </div>
+              </div>
+            </td>
+            <td>Admin</td>
+            <td class="uptime">uzaif@cloudpulse.io</td>
+            <td><span class="pill online">Active</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="server-name-cell">
+                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                <div>
+                  <div class="sname">Priya Sharma</div>
+                  <div class="sip">Editor</div>
+                </div>
+              </div>
+            </td>
+            <td>Editor</td>
+            <td class="uptime">priya@cloudpulse.io</td>
+            <td><span class="pill online">Active</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="server-name-cell">
+                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                <div>
+                  <div class="sname">Rahul Verma</div>
+                  <div class="sip">Viewer</div>
+                </div>
+              </div>
+            </td>
+            <td>Viewer</td>
+            <td class="uptime">rahul@cloudpulse.io</td>
+            <td><span class="pill offline">Inactive</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>this is a temporary static list · will pull real accounts once wired to the backend</footer>
+
+{% endblock %}
