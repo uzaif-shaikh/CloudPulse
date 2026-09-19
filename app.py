@@ -46,3 +46,7 @@ def settings():
 @app.route('/users')
 def users():
     return render_template('users.html', active_page='users')
+@app.route('/logout')
+def logout():
+     session.pop('user_name', None) # Removes the user from session
+     return redirect(url_for('form'))

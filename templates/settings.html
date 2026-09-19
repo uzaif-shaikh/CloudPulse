@@ -5,19 +5,119 @@
   <header>
     <div>
       <h1>Settings</h1>
-      <p class="subtitle">Alert thresholds and account preferences</p>
+      <p class="subtitle">Manage your account, alerts, and dashboard preferences</p>
     </div>
   </header>
 
-  <div class="card" style="max-width:420px;">
-    <div class="card-head">
-      <h2>Alert Thresholds</h2>
-    </div>
-    <div class="summary-row"><span>CPU usage warning</span><span class="n">90%</span></div>
-    <div class="summary-row"><span>Memory usage warning</span><span class="n">70%</span></div>
-    <div class="summary-row"><span>Disk usage warning</span><span class="n">90%</span></div>
-  </div>
+  <div class="settings-grid">
 
-  <footer>this is a temporary static view · thresholds will be editable once wired to the backend</footer>
+    <div class="card">
+      <div class="card-head"><h2>Profile</h2></div>
+      <div class="profile-row">
+        <div class="profile-avatar">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="profile-name">Uzaif</div>
+          <div class="profile-email">uzaif@cloudpulse.io</div>
+        </div>
+      </div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">Display name</div>
+        </div>
+        <input class="field-input" style="width:160px; text-align:left;" type="text" value="Uzaif">
+      </div>
+      <div class="field-row" style="border-bottom:none;">
+        <div>
+          <div class="field-label">Change password</div>
+          <div class="field-desc">Last changed: never</div>
+        </div>
+        <button class="btn-outline" data-toast="Password change — no live view wired up yet.">Change</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Alert Thresholds</h2></div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">CPU usage warning</div>
+          <div class="field-desc">Trigger a warning alert above this value</div>
+        </div>
+        <input class="field-input" type="number" value="90" min="0" max="100">
+      </div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">Memory usage warning</div>
+          <div class="field-desc">Trigger a warning alert above this value</div>
+        </div>
+        <input class="field-input" type="number" value="70" min="0" max="100">
+      </div>
+      <div class="field-row" style="border-bottom:none;">
+        <div>
+          <div class="field-label">Disk usage warning</div>
+          <div class="field-desc">Trigger a warning alert above this value</div>
+        </div>
+        <input class="field-input" type="number" value="90" min="0" max="100">
+      </div>
+      <div class="field-row" style="border-bottom:none; border-top:1px solid var(--panel-border); padding-top:16px; justify-content:flex-end;">
+        <button class="btn-primary" data-toast="Thresholds saved locally — not wired up to the backend yet.">Save Thresholds</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Notifications</h2></div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">Email alerts</div>
+          <div class="field-desc">Get an email when a new alert is triggered</div>
+        </div>
+        <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">Critical alerts only</div>
+          <div class="field-desc">Skip warning-level alerts, notify on critical only</div>
+        </div>
+        <label class="toggle"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+      <div class="field-row" style="border-bottom:none;">
+        <div>
+          <div class="field-label">Weekly summary email</div>
+          <div class="field-desc">Send the weekly report to your inbox</div>
+        </div>
+        <label class="toggle"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Dashboard Preferences</h2></div>
+      <div class="field-row">
+        <div>
+          <div class="field-label">Auto-refresh interval</div>
+          <div class="field-desc">How often the dashboard polls for new metrics</div>
+        </div>
+        <select class="field-select">
+          <option>10 seconds</option>
+          <option selected>30 seconds</option>
+          <option>60 seconds</option>
+        </select>
+      </div>
+      <div class="field-row" style="border-bottom:none;">
+        <div>
+          <div class="field-label">Default landing page</div>
+          <div class="field-desc">Page shown right after login</div>
+        </div>
+        <select class="field-select">
+          <option selected>Dashboard</option>
+          <option>Servers</option>
+          <option>Alerts</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+<a href="/logout" class="btn-logout">Log out</a>
+  <footer>this is a temporary static view · none of these controls are wired up yet — nothing here persists on save</footer>
 
 {% endblock %}
