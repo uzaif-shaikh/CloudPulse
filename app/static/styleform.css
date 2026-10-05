@@ -118,12 +118,36 @@ form {
   color: #fff;
   font-weight: 600;
 }
+/* Flash messages */
+/* ================= FLASH MESSAGES ================= */
 
-.social-icons {
-  display: flex;
-  justify-content: center;
+.flashes {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    right: 40px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    z-index: 10;
 }
 
+.flashes li {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.flashes .error {
+    color: #dc2626;
+}
+
+.flashes .success {
+    color: #16a34a;
+}
 .social-icons a {
   display: inline-flex;
   padding: 10px;
