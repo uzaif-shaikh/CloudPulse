@@ -36,3 +36,55 @@ class User(db.Model):
 
     def __repr__(self):
         return f"<User {self.username}>"
+
+
+# ==========================================
+# Metric Model
+# ==========================================
+
+class Metric(db.Model):
+
+    __tablename__ = "metrics"
+
+    id = db.Column(
+        db.Integer,
+        primary_key=True
+    )
+
+    server_id = db.Column(
+        db.Integer,
+        nullable=False
+    )
+
+    cpu_usage = db.Column(
+        db.Float,
+        nullable=False
+    )
+
+    memory_usage = db.Column(
+        db.Float,
+        nullable=False
+    )
+
+    disk_usage = db.Column(
+        db.Float,
+        nullable=False
+    )
+
+    network_sent = db.Column(
+        db.Float,
+        nullable=False
+    )
+
+    network_received = db.Column(
+        db.Float,
+        nullable=False
+    )
+
+    timestamp = db.Column(
+        db.DateTime,
+        default=datetime.utcnow
+  )
+
+    def __repr__(self):
+        return f"<Metric {self.id}>"

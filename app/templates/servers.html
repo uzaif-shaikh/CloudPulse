@@ -16,110 +16,134 @@
 
     <div class="table-scroll">
       <table class="server-table">
-        <thead>
-          <tr>
-            <th>Server Name</th>
-            <th>Status</th>
-            <th>CPU</th>
-            <th>RAM</th>
-            <th>Disk</th>
-            <th>Uptime</th>
-            <th></th>
-          </tr>
-        </thead>
         <tbody>
 
-          <tr>
-            <td>
-              <div class="server-name-cell">
-                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                <div>
-                  <div class="sname">Web Server</div>
-                  <div class="sip">18.232.45.67 | Mumbai</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="pill online">Online</span></td>
-            <td><div class="cell-metric"><span class="val">35%</span><div class="bar"><div class="bar-fill ok" style="width:35%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">48%</span><div class="bar"><div class="bar-fill ok" style="width:48%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">62%</span><div class="bar"><div class="bar-fill ok" style="width:62%"></div></div></div></td>
-            <td class="uptime">12d 5h 30m</td>
-            <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
-          </tr>
+{% for metric in metrics %}
 
-          <tr>
-            <td>
-              <div class="server-name-cell">
-                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                <div>
-                  <div class="sname">Database Server</div>
-                  <div class="sip">18.233.11.23 | Mumbai</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="pill online">Online</span></td>
-            <td><div class="cell-metric"><span class="val">55%</span><div class="bar"><div class="bar-fill ok" style="width:55%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">71%</span><div class="bar"><div class="bar-fill warn" style="width:71%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">80%</span><div class="bar"><div class="bar-fill warn" style="width:80%"></div></div></div></td>
-            <td class="uptime">9d 2h 15m</td>
-            <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
-          </tr>
+<tr>
 
-          <tr>
-            <td>
-              <div class="server-name-cell">
-                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                <div>
-                  <div class="sname">API Server</div>
-                  <div class="sip">18.233.45.89 | Mumbai</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="pill offline">Offline</span></td>
-            <td class="uptime">-</td>
-            <td class="uptime">-</td>
-            <td class="uptime">-</td>
-            <td class="uptime">-</td>
-            <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
-          </tr>
+    <!-- Server -->
+    <td>
+        <div class="server-name-cell">
 
-          <tr>
-            <td>
-              <div class="server-name-cell">
-                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                <div>
-                  <div class="sname">Backup Server</div>
-                  <div class="sip">18.234.22.11 | Mumbai</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="pill warning">Warning</span></td>
-            <td><div class="cell-metric"><span class="val">92%</span><div class="bar"><div class="bar-fill crit" style="width:92%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">87%</span><div class="bar"><div class="bar-fill crit" style="width:87%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">94%</span><div class="bar"><div class="bar-fill crit" style="width:94%"></div></div></div></td>
-            <td class="uptime">20d 6h 45m</td>
-            <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
-          </tr>
+            <div class="avatar">
+                <svg viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="9" r="3.2"
+                            stroke="currentColor"
+                            stroke-width="1.6"/>
+                    <path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
 
-          <tr>
-            <td>
-              <div class="server-name-cell">
-                <div class="avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 19c.6-3.4 3.4-5.8 6.5-5.8s5.9 2.4 6.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                <div>
-                  <div class="sname">Auth Server</div>
-                  <div class="sip">18.235.67.34 | Mumbai</div>
+            <div>
+                <div class="sname">
+                    Server {{ metric.server_id }}
                 </div>
-              </div>
-            </td>
-            <td><span class="pill online">Online</span></td>
-            <td><div class="cell-metric"><span class="val">23%</span><div class="bar"><div class="bar-fill ok" style="width:23%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">34%</span><div class="bar"><div class="bar-fill ok" style="width:34%"></div></div></div></td>
-            <td><div class="cell-metric"><span class="val">45%</span><div class="bar"><div class="bar-fill ok" style="width:45%"></div></div></div></td>
-            <td class="uptime">15d 3h 20m</td>
-            <td><button class="dots-btn" data-toast="Server actions — no live view wired up yet.">&#8942;</button></td>
-          </tr>
 
-        </tbody>
+                <div class="sip">
+                    Server ID: {{ metric.server_id }}
+                </div>
+            </div>
+
+        </div>
+    </td>
+
+
+    <!-- Status -->
+    <td>
+        <span class="pill online">Online</span>
+    </td>
+
+
+    <!-- CPU -->
+    <td>
+        <div class="cell-metric">
+
+            <span class="val">
+                {{ metric.cpu_usage }}%
+            </span>
+
+            <div class="bar">
+                <div
+                    class="bar-fill ok"
+                    style="width: {{ metric.cpu_usage }}%;">
+                </div>
+            </div>
+
+        </div>
+    </td>
+
+
+    <!-- RAM -->
+    <td>
+        <div class="cell-metric">
+
+            <span class="val">
+                {{ metric.memory_usage }}%
+            </span>
+
+            <div class="bar">
+                <div
+                    class="bar-fill ok"
+                    style="width: {{ metric.memory_usage }}%;">
+                </div>
+            </div>
+
+        </div>
+    </td>
+
+
+    <!-- Disk -->
+    <td>
+        <div class="cell-metric">
+
+            <span class="val">
+                {{ metric.disk_usage }}%
+            </span>
+
+            <div class="bar">
+                <div
+                    class="bar-fill ok"
+                    style="width: {{ metric.disk_usage }}%;">
+                </div>
+            </div>
+
+        </div>
+    </td>
+
+
+    <!-- Timestamp -->
+    <td class="uptime">
+        {{ metric.timestamp.strftime("%d-%m-%Y %H:%M") }}
+    </td>
+
+
+    <!-- Actions -->
+    <td>
+        <button
+            class="dots-btn"
+            data-toast="Server actions">
+            &#8942;
+        </button>
+    </td>
+
+</tr>
+
+{% else %}
+
+<tr>
+    <td colspan="7" style="text-align: center;">
+        No metric data available.
+    </td>
+</tr>
+
+{% endfor %}
+
+</tbody>
       </table>
     </div>
   </div>

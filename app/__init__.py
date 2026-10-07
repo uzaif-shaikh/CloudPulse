@@ -38,6 +38,7 @@ def create_app():
     from app.routes.reports import reports_bp
     from app.routes.settings import settings_bp
     from app.routes.users import users_bp
+   
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(dashboard_bp)
@@ -46,11 +47,13 @@ def create_app():
     app.register_blueprint(reports_bp)
     app.register_blueprint(settings_bp)
     app.register_blueprint(users_bp)
-
+   
+    
     # -----------------------------
     # Create database tables
     # -----------------------------
-
+   
+   
     with app.app_context():
         db.create_all()
 
