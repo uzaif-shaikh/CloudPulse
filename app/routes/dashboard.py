@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from flask import Blueprint, render_template, session
 
 from app.models import Metric
@@ -18,5 +20,7 @@ def dashboard():
     return render_template(
         "project.html",
         usern=logged_in_user,
-        metrics=metrics
+        metrics=metrics,
+        timedelta=timedelta
+
     )

@@ -238,7 +238,7 @@
     <td class="uptime">
 
         {% if metric.timestamp %}
-            {{ metric.timestamp.strftime("%d-%m-%Y %H:%M") }}
+            {{ (metric.timestamp + timedelta(hours=5, minutes=30)).strftime('%d %b %Y, %I:%M:%S %p') }}
         {% else %}
             -
         {% endif %}
